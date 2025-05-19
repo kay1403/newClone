@@ -79,3 +79,15 @@ h1{
   justify-content: center;
 
 }
+.log {
+  background-color: #232f71;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 1176px;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
