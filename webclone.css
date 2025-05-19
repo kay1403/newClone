@@ -23,6 +23,12 @@ justify-content: space-between;
   align-items: center;
 
 }
+.input{
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 3000px;
+}
 .navbtn {
   border: 1px solid #1668e3;
   padding: 3px 20px;
