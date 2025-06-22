@@ -10,17 +10,18 @@
 </head>
 
 <style>
-    * {
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    color: #333;
-    line-height: 1.6;
-    background-color: #fff;
+    color: #2c3e50;
+    line-height: 1.7;
+    background-color: #f8f9fa;
 }
 
 .container {
@@ -31,11 +32,12 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    padding: 15px 0;
-    position: relative;
-    z-index: 100;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header .container {
@@ -45,10 +47,15 @@ header .container {
 }
 
 .logo a {
-    color: #0066cc;
-    font-size: 28px;
-    font-weight: 700;
+    color: #007bff;
+    font-size: 30px;
+    font-weight: 800;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+.logo a:hover {
+    color: #0056b3;
 }
 
 .logo sup {
@@ -66,23 +73,25 @@ nav ul {
 nav ul li a {
     color: #333;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 500;
     display: flex;
     align-items: center;
-    gap: 5px;
-    font-weight: 500;
+    gap: 6px;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #0066cc;
+    color: #007bff;
 }
 
-nav ul li a .material-icons {
+.material-icons {
     font-size: 18px;
+    color: #666;
 }
 
 .download-link {
-    color: #0066cc;
+    color: #007bff;
 }
 
 .register-nav {
@@ -92,12 +101,13 @@ nav ul li a .material-icons {
 /* Hero Section */
 .hero {
     height: 500px;
-    position: relative;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./bgImage.jpg);
+    justify-content: flex-start;
+    position: relative;
+    background: linear-gradient(to bottom right, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(./bgImage.jpg);
     background-size: cover;
-    background-position: center 30%;
+    background-position: center;
 }
 
 .hero-content {
@@ -109,35 +119,35 @@ nav ul li a .material-icons {
 
 .hero h1 {
     color: #fff;
-    font-size: 42px;
-    font-weight: 700;
+    font-size: 48px;
+    font-weight: 800;
     margin-bottom: 30px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     max-width: 800px;
     margin-left: 50px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 /* Search Box */
 .search-container {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: -40px auto 40px;
 }
 
 .search-box {
     display: flex;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .search-input {
     flex: 1;
-    padding: 15px 20px;
+    padding: 18px 20px;
     display: flex;
     align-items: center;
     gap: 10px;
-    border-right: 1px solid #eee;
+    border-right: 1px solid #ddd;
 }
 
 .search-input:last-of-type {
@@ -150,15 +160,11 @@ nav ul li a .material-icons {
     font-size: 16px;
     width: 100%;
     color: #333;
+    background: transparent;
 }
 
 .search-input input::placeholder {
-    color: #666;
-}
-
-.material-icons {
-    color: #666;
-    font-size: 24px;
+    color: #888;
 }
 
 .date-info, .guest-info {
@@ -168,7 +174,7 @@ nav ul li a .material-icons {
 
 .date-label, .guest-label {
     font-size: 12px;
-    color: #666;
+    color: #888;
     font-weight: 500;
 }
 
@@ -178,103 +184,106 @@ nav ul li a .material-icons {
 }
 
 .search-button {
-    background-color: #0066cc;
+    background-color: #007bff;
     color: white;
     border: none;
     padding: 0 40px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s;
-    border-radius: 0;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .search-button:hover {
-    background-color: #0055aa;
+    background-color: #0056b3;
+    transform: scale(1.03);
 }
 
 /* Message Bar */
 .message-bar {
-    background-color: #1a2b4a;
+    background-color: #152238;
     color: white;
-    padding: 20px 0;
+    padding: 25px 0;
 }
 
 .message-content {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 .message-icon-container {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.15);
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .message-icon {
-    color: white;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .message-content p {
     flex: 1;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .register-button {
-    background-color: #0066cc;
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 4px;
-    padding: 8px 20px;
+    border-radius: 6px;
+    padding: 10px 24px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .register-button:hover {
-    background-color: #0055aa;
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 /* Accommodation Types */
 .accommodation-types {
-    padding: 50px 0;
+    padding: 60px 0;
+    background-color: #fff;
 }
 
 .accommodation-types h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-    color: #333;
-    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 35px;
+    color: #2c3e50;
+    font-weight: 700;
+    text-align: center;
 }
 
 .accommodation-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+    gap: 24px;
 }
 
 .accommodation-card {
     position: relative;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 250px;
     cursor: pointer;
     text-decoration: none;
     display: block;
+    background-color: #fafafa;
 }
 
 .accommodation-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card-image {
@@ -282,29 +291,26 @@ nav ul li a .material-icons {
     height: 100%;
     background-size: cover;
     background-position: center;
-    transition: transform 0.5s;
+    transition: transform 0.5s ease;
 }
 
 .accommodation-card:hover .card-image {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
+/* Background images — unchanged */
 .holiday-home {
     background-image: url(./7c2ffeee.jpg);
 }
-
 .holiday-apartment {
     background-image: url(./hetel1.jpg);
 }
-
 .holiday-cottage {
     background-image: url(./hotel.jpg);
 }
-
 .country-house {
     background-image: url(./ca-hero-dt.jpg);
 }
-
 .villa {
     background-image: url(./ukhouse.jpg);
 }
@@ -313,13 +319,13 @@ nav ul li a .material-icons {
     position: absolute;
     bottom: 15px;
     left: 15px;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 8px 12px;
-    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.92);
+    padding: 8px 14px;
+    border-radius: 6px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     color: #333;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
     z-index: 2;
 }
 
@@ -328,7 +334,7 @@ nav ul li a .material-icons {
     .accommodation-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     nav ul {
         gap: 15px;
     }
@@ -338,21 +344,21 @@ nav ul li a .material-icons {
     nav ul {
         gap: 10px;
     }
-    
+
     .hero h1 {
-        font-size: 32px;
+        font-size: 36px;
         margin-left: 20px;
     }
-    
+
     .search-box {
         flex-direction: column;
     }
-    
+
     .search-input {
         border-right: none;
         border-bottom: 1px solid #eee;
     }
-    
+
     .accommodation-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -363,27 +369,28 @@ nav ul li a .material-icons {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .hero h1 {
         font-size: 28px;
         margin-left: 0;
         text-align: center;
     }
-    
+
     .accommodation-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .message-content {
         flex-direction: column;
         text-align: center;
     }
 }
+
 </style>
 <body>
     <header>
